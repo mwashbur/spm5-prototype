@@ -1,0 +1,758 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#mapViewDiv {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*allows home and zoom buttons to be pushed up*/
+.esri-ui {
+    top: 0px !important;
+}
+
+/* .navbar-global {
+  background-color: indigo;
+} */
+
+.navbar-global .navbar-brand {
+  color: #000000;
+}
+
+.navbar-global .navbar-user > li > a {
+    color: #000000;
+}
+
+.navbar-primary {
+    /*background-color: #f2f2f2;*/
+    background-color: rgb(240, 240, 240);
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    /*top: 51px;*/
+    height: 100%;
+    width: 300px;
+    z-index: 8;
+    overflow: hidden;
+    box-shadow: 2.5px 2.5px 2.5px grey;
+    /*border: solid 2px #143c5c;*/
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    overflow-y: auto; /* won't work in FF */
+}
+
+.navbar-primary.collapsed {
+    width: 60px;
+}
+
+.navbar-primary.collapsed .glyphicon {
+    font-size: 20px;
+}
+
+.navbar-primary.collapsed .nav-label {
+    display: none;
+}
+
+.navbar-primary.collapsed .sub-label{
+    display: none;
+}
+
+.navbar-primary.collapsed .links-label {
+    display: none;
+}
+
+.navbar-primary.collapsed #search{
+    display: none;
+}
+
+.navbar-primary.collapsed #searchIcon{
+    display: inline-block;
+}
+
+.navbar-primary.collapsed .print-label {
+    display: none;
+}
+
+#searchIcon{
+    display: none;
+}
+
+.btn-expand-collapse {
+    position: absolute;
+    display: block;
+    left: 19px;
+    /*bottom:0;*/
+    width: 8%;
+    padding: 8px 0;
+    /*border-top:solid 1px #666;*/
+    color: white;
+    font-size: 20px;
+    /*text-align: center;*/
+}
+
+.btn-expand-collapse:hover,
+.btn-expand-collapse:focus {
+    /*background-color: #222;*/
+    color: #d9d9d9;
+    text-decoration: none;
+}
+
+
+.navbar-primary-menu,
+.navbar-primary-menu li {
+    margin:0; padding:0;
+    list-style: none;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.navbar-primary-menu li a {
+  display: block;
+  padding: 10px 18px;
+  text-align: left;
+  border-bottom:solid 1px #d9d9d9;
+  color: #000000;
+  font-size: 16px;
+  text-decoration: none;
+  border-left:solid 5px rgba(240, 240, 240);
+
+}
+
+.navbar-primary-menu li a:hover {
+    /*background-color: #d9d9d9;*/
+    text-decoration: none;
+    color: #000000;
+    border-left:solid 5px #143c5c;
+}
+
+
+.navbar-primary-menu li a .glyphicon,
+.navbar-primary-menu li a .esri-icon {
+    margin-right: 6px;
+    font-size: 20px;
+}
+
+.navbar-primary-menu li a:hover .esri-icon-down {
+    color: #000000;
+}
+
+#search :hover {
+    text-decoration: none;
+}
+
+#search {
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    height: 41px;
+    padding-top: 4px;
+    border-bottom:solid 1px #d9d9d9;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.esri-search--show-suggestions .esri-search__suggestions-menu,
+.esri-search--sources .esri-search__sources-menu {
+    overflow: auto;
+    visibility: visible;
+    max-height: 360px;
+    animation: esri-fade-in 250ms ease-out;
+}
+.esri-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 2.5px 2.5px 2.5px grey;
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    line-height: 16px;
+    background-clip: padding-box;
+    overflow: hidden;
+    width: 100%;
+    visibility: hidden;
+    max-height: 0;
+}
+/* UNCOMMENT TO STYLE SEARCH WIDGET IN NAVBAR */
+/* .esri-search {
+    width: 100% !important;
+    display: inline-block !important;
+}
+
+.esri-icon-search {
+    display: inline-block !important;
+    margin-right: 0px !important;
+}
+
+.esri-icon-search {
+    margin-right: 6px;
+    font-size: 20px;
+    display: block;
+    padding: 10px 18px;
+    text-align: left;
+    border-bottom:solid 1px #d9d9d9;
+    color: #000000;
+    text-decoration: none;
+} */
+
+.main-content {
+    margin-top: 60px;
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.collapsed + .main-content {
+    margin-left: 60px;
+}
+
+#headerTitle {
+    color: white;
+    padding-left: 57px;
+    font-size: 18px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    background-color: #143c5c;
+    overflow: hidden;
+}
+
+.glyphicon:hover {
+    cursor: pointer !important;
+}
+
+#header {
+    padding-top: 10px;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #143c5c;
+}
+
+.nav-label {
+    padding-left: 15px;
+}
+
+.sub-label {
+    padding-left: 65px;
+}
+
+#projectTrackerDiv,
+#driveTexasDiv,
+#spmDiv {
+    height: 32px;
+    background-color: rgb(225, 225, 225);
+    color: #000000;
+    line-height:32px;
+    font-size: 13px;
+}
+
+#projectTrackerDiv:hover,
+#driveTexasDiv:hover,
+#spmDiv:hover {
+    background-color: white;
+    cursor: pointer;
+    color:#0000FF;
+}
+
+.glyphicon.glyphicon-road {
+    font-size: 1.25em !important;
+    top: 4px !important;
+    width: 20px !important;
+  }
+
+#spmDiv img {
+    /*-webkit-filter: opacity(.8) drop-shadow(0 0 0 gray);*/
+    filter:invert(100%);
+}
+
+#projectTrackerDiv img{
+    filter:invert(100%);
+}
+
+.links-label {
+    padding-left: 48px;
+}
+
+.links.dropdowns{
+    font-size: 10px;
+}
+
+.esri-icon.esri-icon-down {
+    position: absolute;
+    color: #000000;
+    right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+#overlaysDown.glyphicon.glyphicon-menu-down {
+    /*position: absolute;*/
+    color: #000000;
+    left: 95px;
+    /*top: 115px;*/
+    /*right: 4px;*/
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 15px;
+}
+
+#basemapDown.glyphicon.glyphicon-menu-down {
+    /*  position: absolute;*/
+    color: #000000;
+    left: 80px;
+    /*    top: 161px;
+    right: 4px;*/
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 15px;
+}
+
+#printDown.glyphicon.glyphicon-menu-down {
+    /* position: absolute;*/
+    color: #000000;
+    left: 130px;
+    /*   top: 206px;
+    right: 4px;*/
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 15px;
+}
+
+#linksDown.glyphicon.glyphicon-menu-down {
+    /*position: absolute;*/
+    color: #000000;
+    left: 75px;
+    /*    top: 295px;
+    right: 4px;*/
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 15px;
+}
+
+
+
+.navbar-primary.collapsed #overlaysDown,
+.navbar-primary.collapsed #basemapDown,
+.navbar-primary.collapsed #printDown,
+.navbar-primary.collapsed #linksDown {
+    display: none;
+}
+
+
+#printSingleDiv{
+    height: 32px;
+    background-color: rgb(225, 225, 225);
+    color: #ddd;
+    text-decoration: none;
+    line-height:32px;
+    font-size: 13px;
+}
+
+#printCountyDiv{
+    height: 32px;
+    background-color: rgb(225, 225, 225);
+    color: #ddd;
+    text-decoration: none;
+    line-height:32px;
+    font-size: 13px;
+}
+
+#printSingleDiv:hover,
+#printCountyDiv:hover {
+    background-color: white;
+    cursor: pointer;
+    color:#0000FF;
+    text-decoration: none;
+}
+
+.print-label{
+    padding-left: 48px;
+    color: #000000;
+}
+
+#printCountyDiv a:hover,
+#printSingleDiv a:hover {
+    text-decoration: none;
+}
+
+.esri-icon.esri-icon-browser{
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.esri-icon.esri-icon-collection{
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+#printSingleDiv a,
+#printCountyDiv a {
+    color: #000000;
+}
+
+
+#printSingleDiv:hover .print-label,
+#printCountyDiv:hover .print-label,
+#printSingleDiv:hover a,
+#printCountyDiv:hover a {
+    color: #0000FF;
+}
+
+.esri-widget {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.esri-legend__layer-body {
+    color: #000000 !important;
+}
+
+.esri-legend__service {
+    padding-left: 12px !important;
+    padding: 0px !important;
+    /* white-space: nowrap !important; */
+}
+
+.esri-legend{
+    white-space: normal;
+}
+
+.esri-legend__message{
+    font-size: 0px !important;
+    padding-left: 20px !important;
+}
+
+.esri-legend__message::before {
+    content: "Turn on feature to view legend" !important;
+    font-size: 11px !important;
+    color: red !important;
+}
+
+.esri-legend__layer-caption {
+    display: none !important;
+}
+
+.evacRouteContainer{
+    width: 100%;
+    padding-top: 10px;
+}
+
+.checkboxEvacRoute {
+    display: inline-flex;
+    /*padding-top: 10px;*/
+    width: 141px;
+    height: 22px;
+    font-size: 13px;
+    color: #000000;
+    padding-left: 8px;
+}
+
+.evacRouteLegendBtn {
+    display: inline;
+    position: absolute;
+    color: #000000;
+    right: 4px;
+}
+
+
+.funcClassContainer {
+    width: 100%;
+}
+
+.checkboxFuncClass {
+    display: inline-flex;
+    /*padding-top: 10px;*/
+    width: 181px;
+    height: 22px;
+    font-size: 13px;
+    color: #000000;
+    padding-left: 8px;
+}
+
+.funcClassLengendBtn {
+    display: inline;
+    position: absolute;
+    color: #000000;
+    right: 4px;
+}
+
+.lowWaterContainer{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.checkboxLowWater{
+    display: inline-flex;
+    /*padding-top: 10px;*/
+    width: 157px;
+    height: 22px;
+    font-size: 13px;
+    color: #000000;
+    padding-left: 8px;
+}
+
+.lowWaterLengendBtn {
+    display: inline;
+    position: absolute;
+    color: #000000;
+    right: 4px;
+}
+
+#layerListDiv {
+    background-color: rgb(225, 225, 225);
+}
+
+#lwBtn.glyphicon.glyphicon-menu-down {
+    background-color: transparent !important;
+    width: 30px !important;
+    /*height: 20px !important;*/
+    border-style: none !important;
+    color: #000000;
+    font-size: 15px;
+    padding-left: 12px;
+}
+
+#erBtn.glyphicon.glyphicon-menu-down {
+    background-color: transparent !important;
+    width: 30px !important;
+    /*height: 20px !important;*/
+    border-style: none !important;
+    color: #000000;
+    font-size: 15px;
+    padding-left: 12px;
+}
+
+#fcBtn.glyphicon.glyphicon-menu-down {
+    background-color: transparent !important;
+    width: 30px !important;
+    /*height: 20px !important;*/
+    border-style: none !important;
+    color: #000000;
+    font-size: 15px;
+    padding-left: 12px;
+}
+
+#lwBtn.glyphicon.glyphicon-menu-down:hover {
+    color: white;
+}
+
+#erBtn.glyphicon.glyphicon-menu-down:hover{
+    color: white;
+}
+
+#fcBtn.glyphicon.glyphicon-menu-down:hover{
+    color: white;
+}
+
+#legendEvacRouteDiv{
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: rgb(225, 225, 225);
+}
+
+#legendFuncClassDiv{
+    background-color: rgb(225, 225, 225);
+}
+
+#legendLowWaterDiv{
+    background-color: rgb(225, 225, 225);
+}
+
+label {
+    font-weight: normal !important;
+}
+
+.fa-toggle-off {
+    color: gray;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-toggle-on {
+    color: green;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-square {
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-check-square {
+    color: green;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-eye {
+    color: green;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-eye-slash {
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.middle,
+.funMiddle, .evacMiddle {
+    text-align: center;
+    margin: 0 auto;
+    /*padding: 2rem;*/
+}
+
+
+.active,
+.activeFun,
+.activeEvac {
+    color: green;
+}
+
+
+#offFun,
+#offLow,
+#offEvac {
+    color: grey;
+}
+
+/*.active:hover,
+.activeFun:hover,
+.activeEvac:hover {
+color: blue;
+}
+
+
+#offFun:hover,
+#offLow:hover,
+#offEvac:hover{
+color: yellow;
+}*/
+
+#lowLabel,
+#funLabel,
+#evacLabel {
+    padding-left: 19px;
+}
+
+/* .navbar-primary::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+.navbar-primary::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.navbar-primary::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}*/
+
+#basemapDiv {
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+.modal-content a {
+    cursor: pointer;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#about:hover{
+    cursor: pointer;
+}
+
+.navbar-primary-menu li a:focus {
+    outline: none;
+}
+
+#txdotDiv,#esriLightGray,#googleDiv,
+#streetsDiv, #osm {
+    height: 32px;
+    line-height: 32px;
+    color: #000000;
+    border-left: 5px solid rgb(225, 225, 225);
+    font-size: 13px;
+}
+
+
+#txdotDiv:hover,
+#esriLightGray:hover,
+#googleDiv:hover,
+#streetsDiv:hover,
+#osm:hover {
+    cursor: pointer;
+    color: red;
+}
+
+/* CUSTOM SCROLLBAR (NOT SUPPORTED IN FF) */
+
+::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
